@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://redenterprisellc.com/sitemap.xml
