@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://redenterprisellc.com/</loc>
+    <loc>https://mpheadley.github.io/RED-Enterprise/</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://redenterprisellc.com/services.html</loc>
+    <loc>https://mpheadley.github.io/RED-Enterprise/services.html</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://redenterprisellc.com/about.html</loc>
+    <loc>https://mpheadley.github.io/RED-Enterprise/about.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://redenterprisellc.com/portfolio.html</loc>
+    <loc>https://mpheadley.github.io/RED-Enterprise/portfolio.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://redenterprisellc.com/contact.html</loc>
+    <loc>https://mpheadley.github.io/RED-Enterprise/contact.html</loc>
     <priority>0.8</priority>
   </url>
 </urlset>
