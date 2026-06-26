@@ -165,7 +165,7 @@
           <!-- Form Column -->
           <div class="contact-form-box animate-on-scroll" style="--stagger-delay: 0.15s">
             <h3>Send Us a Message</h3>
-            <form action="https://formspree.io/f/PLACEHOLDER_FORMSPREE" method="POST">
+            <form id="contact-form" novalidate>
               <div class="form-row">
                 <div class="form-group">
                   <label for="name">Full Name *</label>
@@ -261,5 +261,25 @@
 <!-- PARTIAL:cookie-banner:END -->
 
   <script src="script.js?v=4"></script>
+  <script>
+  (function(){
+    var f=document.getElementById('contact-form');
+    if(!f)return;
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      var btn=f.querySelector('[type=submit]');
+      var orig=btn?btn.innerHTML:'';
+      if(btn){btn.disabled=true;btn.textContent='Sending…';}
+      var data={};new FormData(f).forEach(function(v,k){data[k]=v;});
+      fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+        .then(function(r){return r.json();})
+        .then(function(j){
+          if(j.ok){f.innerHTML='<p style="text-align:center;padding:32px;font-size:17px;font-weight:600;">✓ Message received — we\'ll be in touch soon.</p>';}
+          else{if(btn){btn.disabled=false;btn.innerHTML=orig;}alert('Something went wrong. Please try again.');}
+        })
+        .catch(function(){if(btn){btn.disabled=false;btn.innerHTML=orig;}alert('Network error. Please try again.');});
+    });
+  })();
+  </script>
 </body>
 </html>
